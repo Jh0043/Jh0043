@@ -12,22 +12,51 @@ public class IrregularPolygon
     private ArrayList <Point2D.Double> myPolygon;
     
     public IrregularPolygon(){
-        
+       
     }
     public void add(Point2D.Double aPoint){}
     public void draw() {}
     public double perimeter() {
+        // -----------UNTESTED------------------
+        double peri = 0.0;
+        
+        //attempted to code distance formula
+        
         for(int i = 1; i < myPolygon.size(); i++){
-            myPolygon.get(i);
-            myPolygon.get(i+1);
-            
-            
-            
-               
+            peri = Math.sqrt(Math.pow((myPolygon.get(i+1)).getX() 
+                - (myPolygon.get(i)).getX(), 2)
+                + Math.pow((myPolygon.get(i+1)).getY() 
+                - (myPolygon.get(i)).getY(), 2));
+            //myPolygon.get(i+1).getX();
         }
-        return 1.0;
+        return peri;
     }
     public double area() {
-        return 1.0;
+        // -----------UNTESTED------------------
+        double Area = 0.0;
+        double fPx = 0.0;
+        //first part starting with x
+        double sPy = 0.0;
+        //second part starting with y
+        
+        //attempted to code shoelace formula
+
+        for(int i = 0; i < myPolygon.size(); i++){
+            //myPolygon.get(i).getX() * myPolygon.get(i+1).getY()
+            //    + myPolygon.get(i+1).getX() * myPolygon.get(i+2).getY(); 
+            // -1 * (myPolygon.get(i).getY() * myPolygon.get(i+1).getY()
+            //    + myPolygon.get(i+1).getY() * myPolygon.get(i+2).getY();
+            fPx = (myPolygon.get(i)).getX() * (myPolygon.get(i+1)).getY()
+                    + (myPolygon.get(i+1)).getX() * (myPolygon.get(i+2)).getY(); 
+            sPy = -1 * ((myPolygon.get(i)).getY() * (myPolygon.get(i+1)).getY()
+                    + (myPolygon.get(i+1)).getY() * (myPolygon.get(i+2)).getY());
+        }
+        //(myPolygon.get(myPolygon.size() - 1)).getX() 
+        //    * (myPolygon.get(0)).getY();
+        // - (myPolygon.get(myPolygon.size() - 1)).getY() 
+        //     * (myPolygon.get(0)).getX();
+        Area = Math.abs((0.5) * (fPx + sPy));
+        
+        return Area;
     }
 }
