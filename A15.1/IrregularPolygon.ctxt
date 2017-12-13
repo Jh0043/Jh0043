@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=double\ perimeter()
 comment5.params=
 comment5.target=double\ area()
-numComments=6
+comment6.params=
+comment6.target=java.lang.String\ getName()
+numComments=7
