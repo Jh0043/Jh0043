@@ -12,8 +12,8 @@ public class IrregularPolygonDriver
         polygon1.add(new Point2D.Double(10, 0));
         
         polygon1.draw(); //expects a square
-        System.out.println("Area: " + polygon1.area()); //expects 100
-        System.out.println("Perimeter: " + polygon1.perimeter()); //expects 40
+        System.out.println("Area of P1: " + polygon1.area()); //expects 100
+        System.out.println("Perimeter of P1: " + polygon1.perimeter()); //expects 40
         
         IrregularPolygon polygon2 = new IrregularPolygon();
         System.out.println("Student name: " + polygon2.getName()); //expects your name to be returned
@@ -22,17 +22,17 @@ public class IrregularPolygonDriver
         polygon2.add(new Point2D.Double(10, 0));
         
         polygon2.draw(); //expects a triangle
-        System.out.println("Area: " + polygon2.area()); //expects 50
-        System.out.println("Perimeter: " + polygon2.perimeter()); //expects 34.4
+        System.out.println("Area of P2: " + polygon2.area()); //expects 50
+        System.out.println("Perimeter of P2: " + polygon2.perimeter()); //expects 34.4
         
         IrregularPolygon polygon3 = new IrregularPolygon();
-        System.out.println("Student name: " + polygon1.getName()); //expects your name to be returned
+        System.out.println("Student name: " + polygon3.getName()); //expects your name to be returned
         polygon3.add(new Point2D.Double(0, 0));
         polygon3.add(new Point2D.Double(0, 10));
         
         polygon3.draw(); //expects a line
-        System.out.println("Area: " + polygon3.area()); //expects 0
-        System.out.println("Perimeter: " + polygon3.perimeter()); //expects 20, 10, 0
+        System.out.println("Area of P3: " + polygon3.area()); //expects 0
+        System.out.println("Perimeter of P3: " + polygon3.perimeter()); //expects 20, 10, 0
     }
         
 }
