@@ -24,7 +24,7 @@ public class IrregularPolygonDriver
         polygon2.draw(); //expects a triangle
         System.out.println("Area of P2: " + polygon2.area()); //expects 50
         System.out.println("Perimeter of P2: " + polygon2.perimeter()); //expects 34.4
-        
+        //the perimeter of mine got 34.14
         IrregularPolygon polygon3 = new IrregularPolygon();
         System.out.println("Student name: " + polygon3.getName()); //expects your name to be returned
         polygon3.add(new Point2D.Double(0, 0));

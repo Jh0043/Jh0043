@@ -27,37 +27,49 @@ public class IrregularPolygon
         pencil.home();
         int g = myPolygon.size() - 1;
         for(int i = 0; i <= g ; i++){
-            System.out.println("x: " + myPolygon.get(i).getX());
-            System.out.println("y: " + myPolygon.get(i).getY());
+            //i <= g to be able to reach the x-1
+            /*
+             * Debugging
+             *
+             *System.out.println("x: " + myPolygon.get(i).getX());
+             *System.out.println("y: " + myPolygon.get(i).getY());
+             */
             pencil.move(myPolygon.get(i).getX(), myPolygon.get(i).getY());
             
             
             
         }
         pencil.move((myPolygon.get(0)).getX(), myPolygon.get(0).getY());
-    
+        //move from the end of x-1 to the beginning
     }
     public double perimeter() {
-        // -----------UNTESTED------------------
+        // tested and working
         double peri = 0.0;
         int j = myPolygon.size() - 1;
         int hj = myPolygon.size();
-        //attempted to code distance formula
+        
         int counter = 0;
         for(int i = 0; i < j; i++){
-            counter++;
+            //counter++;
             peri += Math.sqrt(Math.pow((myPolygon.get(i+1)).getX() 
                 - (myPolygon.get(i)).getX(), 2)
                 + Math.pow((myPolygon.get(i+1)).getY() 
                 - (myPolygon.get(i)).getY(), 2));
             //myPolygon.get(i+1).getX();
         }
-        System.out.println("peri: " + peri);
+        //System.out.println("peri: " + peri); debugging
+        
+        //this code represent getting the last to the start part of the 
+        // polygon
         peri += Math.sqrt(Math.pow((myPolygon.get(j)).getX()
             - (myPolygon.get(0)).getX(), 2) 
             + Math.pow((myPolygon.get(j)).getY() 
             - (myPolygon.get(0)).getY(), 2));
-        System.out.println("counter: " + counter);
+        //System.out.println("counter: " + counter); debugging
+        //rounding to the 100 place
+        peri = peri * 100;
+        peri = (double)((int) peri);
+        peri = peri/100;
         return peri;
     }
     public double area() {
@@ -78,7 +90,8 @@ public class IrregularPolygon
         }
         
         
-        
+        //disregard the stuff on the bottom
+        //these were attempts to create the shoelace formula but failed
         
         /*
         for(int i = 0; i < myPolygon.size() - 1; i++){
@@ -113,6 +126,7 @@ public class IrregularPolygon
         System.out.println("sPy: " + sPy);
         Area = Area * (0.5);
         */
+       
         Area = Math.abs(Area / 2);
         return Area;
     }
