@@ -7,11 +7,11 @@ import gpdraw.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class IrregularPolygon
+public class JasperHendra implements Polygon
 {
     private ArrayList <Point2D.Double> myPolygon;
 
-    public IrregularPolygon(){
+    public JasperHendra(){
         this.myPolygon = new ArrayList<Point2D.Double>();
         
     }
